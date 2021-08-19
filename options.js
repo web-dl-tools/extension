@@ -1,6 +1,8 @@
 const UPDATE_WEBSITE_URL_BUTTON_ID = 'update_website_url';
 const WEBSITE_URL_INPUT_ID = 'website_url';
 const WEBSITE_URL_STORAGE_ID = 'website_url';
+const UPDATED_CHECKMARK_ID = 'updated_checkmark';
+const HIDDEN_CLASS = 'hidden';
 
 /**
  * Get an element from the document.
@@ -34,8 +36,13 @@ const setStorageValue = (key, value) => {
 /**
  * Persist the website url.
  */
-const onUpdateWebsiteUrlButtonClick = () =>
+const onUpdateWebsiteUrlButtonClick = () => {
     setStorageValue(WEBSITE_URL_STORAGE_ID, getElement(WEBSITE_URL_INPUT_ID).value);
+    getElement(UPDATED_CHECKMARK_ID).classList.remove(HIDDEN_CLASS);
+    setTimeout(function(){
+        getElement(UPDATED_CHECKMARK_ID).classList.add(HIDDEN_CLASS);
+    }, 1500);
+};
 
 
 /**
@@ -43,7 +50,8 @@ const onUpdateWebsiteUrlButtonClick = () =>
  */
 const constructOptions = () =>
     getStorageValue(WEBSITE_URL_STORAGE_ID, (data) => {
-        getElement(WEBSITE_URL_INPUT_ID).value = data[WEBSITE_URL_STORAGE_ID];
+        if (WEBSITE_URL_STORAGE_ID in data)
+            getElement(WEBSITE_URL_INPUT_ID).value = data[WEBSITE_URL_STORAGE_ID];
         getElement(UPDATE_WEBSITE_URL_BUTTON_ID).addEventListener("click", onUpdateWebsiteUrlButtonClick);
     });
 
