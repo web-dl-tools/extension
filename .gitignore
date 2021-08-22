@@ -3,6 +3,3 @@
 
 # Editor directories and files
 .idea
-
-# Extension
-build/extension.pem

@@ -16,5 +16,6 @@
     "48": "/images/icon_48.png",
     "128": "/images/icon_128.png"
   },
-  "permissions": ["storage", "contextMenus"]
+  "permissions": ["storage", "contextMenus"],
+  "update_url": "https://raw.githubusercontent.com/web-dl-tools/extension/master/updates.xml"
 }
