@@ -15,7 +15,7 @@ Please go to the extension options page and fill in the values.
 
 | Property              | Description                            | Required | Example                                               |
 |-----------------------|----------------------------------------|----------|---------------------|
-| **Website URL**       | The url of Web Dl website              | Yes      | http://localhost                                                     |
+| **Website URL**       | The url of Web DL website              | Yes      | http://localhost                                                     |
 
 ## Installation
 The Wel DL Extension requires the following software to be installed:
